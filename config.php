@@ -16,6 +16,7 @@
 	$styles[] = $GLOBALS["CSS_DIR"] . "main.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "vendor.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "font-awesome/css/font-awesome.min.css";
+	$styles[] = "https://fonts.googleapis.com/css?family=Lemonada&display=swap";
 
 	//SITE SCRIPTS
 	$scripts[] = $GLOBALS["JS_DIR"] . "jquery-3.4.1.min.js";
