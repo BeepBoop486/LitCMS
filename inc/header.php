@@ -17,7 +17,7 @@
 			echo '<link rel="stylesheet" type="text/css" href="'.$styles[$i].'">';
 		}
 		for($i = 0; $i < count($scripts); $i++) {
-		echo '<script type="text/javascript" src="'.$scripts[$i].'"></script>';
+			echo '<script type="text/javascript" src="'.$scripts[$i].'"></script>';
 		}
 
 	 ?>
@@ -66,6 +66,8 @@
 					</form>
 					<a href="#0" title="Close Search" class="header__overlay-close">Close</a>
 				</div>
+
+				<?php include "includables/navigation.php"; ?>
 
 			</div>
 		</header>

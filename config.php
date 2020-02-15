@@ -19,8 +19,8 @@
 	//SITE STYLES
 	$styles[] = $GLOBALS["CSS_DIR"] . "base.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "fonts.css";
-	$styles[] = $GLOBALS["CSS_DIR"] . "main.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "vendor.css";
+	$styles[] = $GLOBALS["CSS_DIR"] . "main.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "font-awesome/css/font-awesome.min.css";
 	$styles[] = "https://fonts.googleapis.com/css?family=Lemonada&display=swap";
 
