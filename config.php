@@ -6,6 +6,12 @@
 	$GLOBALS['SITE_TAGS'] = "lightweight, cms, free, opensource, gnu, gpl, php, html, css, github, git, bootstrap";
 	$GLOBALS['SITE_AUTH'] = "BeepBoop486";
 
+	//SITE MEDIA
+	$GLOBALS['SOCIAL_FACEBOOK'] = "";
+	$GLOBALS['SOCIAL_TWITTER'] = "";
+	$GLOBALS['SOCIAL_INSTAGRAM'] = "";
+	$GLOBALS['SOCIAL_PINTEREST'] = "";
+
 	//SITE DIRS CONFIG
 	$GLOBALS['CSS_DIR'] = "/css/";
 	$GLOBALS['JS_DIR'] = "/js/";
