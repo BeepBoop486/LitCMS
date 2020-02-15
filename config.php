@@ -38,4 +38,9 @@
 	$menus[] = "Blog";
 	$menus[] = "Media";
 
+	$menu_link[] = "/";
+	$menu_link[] = "/who-we-are";
+	$menu_link[] = "/blog";
+	$menu_link[] = "/media";
+
 ?>

@@ -4,7 +4,7 @@
 	<ul class="header__nav">
 	<?php
 		for($i = 0; $i < count($menus); $i++) {
-			echo '<li><a href="">'.$menus[$i].'</a></li>';
+			echo '<li><a href="'.$menu_link[$i].'">'.$menus[$i].'</a></li>';
 		}
 	?>
 	</ul>
