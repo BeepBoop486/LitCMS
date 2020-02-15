@@ -34,20 +34,38 @@
 					<a href="/" class="logo" style="font-family: 'Lemonada', cursive; color: #fff; font-size: 34px;"><?php echo $GLOBALS["SITE_NAME"]; ?></a>
 				</div>
 
-			<div class="header__social">
-				<li>
-					<a href="<?php echo $GLOBALS['SOCIAL_FACEBOOK']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				</li>
-				<li>
-					<a href="<?php echo $GLOBALS['SOCIAL_TWITTER']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				</li>
-				<li>
-					<a href="<?php echo $GLOBALS['SOCIAL_INSTAGRAM']; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				</li>
-				<li>
-					<a href="<?php echo $GLOBALS['SOCIAL_PINTEREST']; ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-				</li>
-			</div>
+				<!-- header__social -->
+
+				<div class="header__social">
+					<li>
+						<a href="<?php echo $GLOBALS['SOCIAL_FACEBOOK']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="<?php echo $GLOBALS['SOCIAL_TWITTER']; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="<?php echo $GLOBALS['SOCIAL_INSTAGRAM']; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					</li>
+					<li>
+						<a href="<?php echo $GLOBALS['SOCIAL_PINTEREST']; ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+					</li>
+				</div>
+
+				<!-- End header__social -->
+
+				<a class="header__search-trigger" href="#0"></a>
+
+				<div class="header__search">
+					<!-- TODO: THIS -->
+					<form role="search" method="GET" class="header__search-form" action="">
+						<label>
+							<span class="hide-content">Search for:</span>
+							<input type="search" class="search-field" placeholder="Type Keywords" value="" name="query">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</form>
+					<a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+				</div>
 
 			</div>
 		</header>
