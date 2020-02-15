@@ -31,4 +31,11 @@
 	$scripts[] = $GLOBALS["JS_DIR"] . "plugins.js";
 	$scripts[] = $GLOBALS["JS_DIR"] . "main.js";
 
+	//OTHER STUFF
+
+	$menus[] = "Home";
+	$menus[] = "Who we are?";
+	$menus[] = "Blog";
+	$menus[] = "Media";
+
 ?>
