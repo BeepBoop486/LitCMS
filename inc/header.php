@@ -27,6 +27,7 @@
 
 	<!-- Header -->
 	<section class="s-pageheader s-pageheader--home">
+
 		<header class="header">
 			<div class="header__content row">
 
@@ -71,5 +72,8 @@
 
 			</div>
 		</header>
+
+		<?php include "includables/featured.php"; ?>
+
 	</section>
 	<!-- End header -->
