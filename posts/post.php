@@ -1,5 +1,7 @@
 <?php 
 
+	$index = 0;
+
 	include '../inc/header.php';
 
 	if (isset($_GET['id'])) {
