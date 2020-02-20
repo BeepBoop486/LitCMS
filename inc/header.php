@@ -22,6 +22,18 @@
 
 	 ?>
 
+	 <style type="text/css">
+	 	.s-styles {
+	 		background: #f2f2f2;
+	 		padding-top: 12rem;
+	 		padding-bottom: 12rem;
+	 	}
+
+	 	.s-styles .section-intro h1 {
+	 		margin-top: 0;
+	 	}
+	 </style>
+
 </head>
 <body id="top">
 
@@ -41,7 +53,7 @@
 
 				<!-- header__social -->
 
-				<div class="header__social">
+				<ul class="header__social">
 					<li>
 						<a href="<?php echo $GLOBALS['SOCIAL_FACEBOOK']; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					</li>
@@ -54,8 +66,7 @@
 					<li>
 						<a href="<?php echo $GLOBALS['SOCIAL_PINTEREST']; ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
 					</li>
-				</div>
-
+				</ul>
 				<!-- End header__social -->
 
 				<a class="header__search-trigger" href="#0"></a>
@@ -71,6 +82,8 @@
 					</form>
 					<a href="#0" title="Close Search" class="header__overlay-close">Close</a>
 				</div>
+
+				<a href="#0" title="Menu" class="header__toggle-menu"><span>Menu</span></a>
 
 				<?php include "includables/navigation.php"; ?>
 

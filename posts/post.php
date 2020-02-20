@@ -46,3 +46,5 @@
 	</article>
 
 </section>
+
+<?php include '../inc/footer.php'; ?>

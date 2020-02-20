@@ -24,18 +24,18 @@
 
 	//SITE STYLES
 	$styles[] = $GLOBALS["CSS_DIR"] . "base.css";
-	$styles[] = $GLOBALS["CSS_DIR"] . "fonts.css";
+	//$styles[] = $GLOBALS["CSS_DIR"] . "fonts.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "vendor.css";
 	$styles[] = $GLOBALS["CSS_DIR"] . "main.css";
-	$styles[] = $GLOBALS["CSS_DIR"] . "font-awesome/css/font-awesome.min.css";
-	$styles[] = "https://fonts.googleapis.com/css?family=Lemonada&display=swap";
+	//$styles[] = $GLOBALS["CSS_DIR"] . "font-awesome/css/font-awesome.min.css";
+	//$styles[] = "https://fonts.googleapis.com/css?family=Lemonada&display=swap";
 
 	//SITE SCRIPTS
-	$scripts[] = $GLOBALS["JS_DIR"] . "jquery-3.4.1.min.js";
+	//$scripts[] = $GLOBALS["JS_DIR"] . "jquery-3.4.1.min.js";
 	$scripts[] = $GLOBALS["JS_DIR"] . "modernizr.js";
 	$scripts[] = $GLOBALS["JS_DIR"] . "pace.js";
-	$scripts[] = $GLOBALS["JS_DIR"] . "plugins.js";
-	$scripts[] = $GLOBALS["JS_DIR"] . "main.js";
+	//$scripts[] = $GLOBALS["JS_DIR"] . "plugins.js";
+	//$scripts[] = $GLOBALS["JS_DIR"] . "main.js";
 
 	//OTHER STUFF
 

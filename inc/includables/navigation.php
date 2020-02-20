@@ -9,4 +9,6 @@
 	?>
 	</ul>
 
+	<a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu"></a>
+
 </nav>
