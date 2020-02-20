@@ -2,6 +2,7 @@
 
     RewriteEngine on
 
-    RewriteRule ^p/(.*)$ posts/post.php?id=$1					[NC,L]
+    RewriteRule ^p/(.*)$ posts/post.php?id=$1						[NC,L]
+    RewriteRule ^register$ users/register.php						[NC,L]
 
 </IfModule>
