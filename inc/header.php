@@ -26,13 +26,17 @@
 <body id="top">
 
 	<!-- Header -->
+	<?php if($index == 1) : ?>
 	<section class="s-pageheader s-pageheader--home">
+	<?php else: ?>
+	<section class="s-pageheader">
+	<?php endif; ?>
 
 		<header class="header">
 			<div class="header__content row">
 
 				<div class="header__logo">
-					<a href="/" class="logo" style="font-family: 'Lemonada', cursive; color: #fff; font-size: 34px;"><?php echo $GLOBALS["SITE_NAME"]; ?></a>
+					<a href="/" class="logo" style="font-family: 'librebaskerville-bold', serif; text-transform: uppercase; color: #fff; font-size: 34px;"><?php echo $GLOBALS["SITE_NAME"]; ?></a>
 				</div>
 
 				<!-- header__social -->
@@ -73,7 +77,7 @@
 			</div>
 		</header>
 
-		<?php include "includables/featured.php"; ?>
+		<?php if($index == 1) { include "includables/featured.php"; } ?>
 
 	</section>
 	<!-- End header -->

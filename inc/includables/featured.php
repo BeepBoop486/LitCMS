@@ -2,7 +2,7 @@
 	<div class="col-full">
 
 		<div class="featured">
-			
+
 			<?php 
 				//This will be the latest post
 				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT 1");
@@ -16,22 +16,17 @@
 					<div class="featured__column featured__column--big">
 						<div class="entry" style="background-image: url('.$pthumb.')">
 							<div class="entry__content">
-
 							<span class="entry__category"><a href="#">'.$pcat.'</a></span>
-
-							<h1><a href="#">'.$pname.'</a></h1>
-
+							<h1><a href="/p/'.$pid.'">'.$pname.'</a></h1>
 							<div class="entry__info">
 								<a href="#" class="entry__profile-pic">
 									<img class="avatar" src="/images/default-pp.png">
 								</a>
-
 								<ul class="entry__meta">
 									<li><a href="#0">'.$pupl.'</a></li>
 									<li>'.$pdate.'</li>
 								</ul>
 							</div>
-
 							</div>
 						</div>
 					</div>
@@ -49,22 +44,17 @@
 						<div class="featured__column featured__column--small">
 							<div class="entry" style="background-image: url('.$pthumb.')">
 								<div class="entry__content">
-
 								<span class="entry__category"><a href="#">'.$pcat.'</a></span>
-
-								<h1><a href="#">'.$pname.'</a></h1>
-
+								<h1><a href="/p/'.$pid.'">'.$pname.'</a></h1>
 								<div class="entry__info">
 									<a href="#" class="entry__profile-pic">
 										<img class="avatar" src="/images/default-pp.png">
 									</a>
-
 									<ul class="entry__meta">
 										<li><a href="#0">'.$pupl.'</a></li>
 										<li>'.$pdate.'</li>
 									</ul>
 								</div>
-
 								</div>
 							</div>
 						</div>
@@ -77,4 +67,4 @@
 		</div>
 
 	</div>
-</div>
+</div> 

@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine on
+
+    RewriteRule ^p/(.*)$ posts/post.php?id=$1					[NC,L]
+
+</IfModule>
