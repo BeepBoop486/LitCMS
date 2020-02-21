@@ -4,5 +4,6 @@
 
     RewriteRule ^p/(.*)$ posts/post.php?id=$1						[NC,L]
     RewriteRule ^register$ users/register.php						[NC,L]
+    RewriteRule ^login$ users/login.php								[NC,L]
 
 </IfModule>

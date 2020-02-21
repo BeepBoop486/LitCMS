@@ -1,6 +1,9 @@
 <?php
 	$index = 0;
 	include '../inc/header.php';
+	if (!$GLOBALS['registration_enabled']) {
+		echo '<script>window.location.href = "/"</script>';
+	}
 ?>
 
 <section id="styles" class="s-styles">
