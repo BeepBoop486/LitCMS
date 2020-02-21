@@ -40,13 +40,9 @@
 	//OTHER STUFF
 
 	$menus[] = "Home";
-	$menus[] = "Who we are?";
-	$menus[] = "Blog";
-	$menus[] = "Media";
+	$menus[] = "Register";
 
 	$menu_link[] = "/";
-	$menu_link[] = "/who-we-are";
-	$menu_link[] = "/blog";
-	$menu_link[] = "/media";
+	$menu_link[] = "/register";
 
 ?>
