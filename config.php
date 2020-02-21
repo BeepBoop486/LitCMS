@@ -6,7 +6,7 @@
 	$GLOBALS['SITE_TAGS'] = "lightweight, cms, free, opensource, gnu, gpl, php, html, css, github, git, bootstrap";
 	$GLOBALS['SITE_AUTH'] = "BeepBoop486";
 
-	$GLOBALS['FEATURED'] = "0";
+	$GLOBALS['FEATURED'] = 0;
 	/*
 	 * 0 - Will select the posts where "is_featured" is one (in db)
 	 * 1 - Will select just the latest posts

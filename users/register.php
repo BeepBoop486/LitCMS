@@ -22,7 +22,7 @@
 						$finalpass = password_hash($ppass, PASSWORD_BCRYPT);
 
 						$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass) VALUES(?,?,?)");
-						$stmt->bind_param("sss", $pname, $pmail, $ppass);
+						$stmt->bind_param("sss", $pname, $pmail, $finalpass);
 						if($stmt->execute()) {
 							echo '
 								<div class="col-full tab-full">
