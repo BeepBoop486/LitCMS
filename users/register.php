@@ -22,7 +22,7 @@
 						$stmt->bind_param("sss", $pname, $pmail, $ppass);
 						if($stmt->execute()) {
 							echo '
-								<div class="col-five tab-full">
+								<div class="col-full tab-full">
 									<div class="alert-box alert-box--success hideit">
 										<p>You\'ve successfully created an account</p>
 										<i class="fa fa-times alert-box__close"></i>
@@ -33,7 +33,7 @@
 						$stmt->close();
 					} else {
 						echo '
-							<div class="col-five tab-full">
+							<div class="col-full tab-full">
 								<div class="alert-box alert-box--error hideit">
 									<p>Your passwords doesn\'t match</p>
                     				<i class="fa fa-times alert-box__close"></i>
