@@ -12,8 +12,8 @@
 	 * 1 - Will select just the latest posts
 	 */
 
-	$GLOBALS['registration_enabled'] = 0;
-	// 0 - enabled, 1 - disabled
+	$GLOBALS['registration_enabled'] = 1;
+	// 0 - disabled, 1 - enabled
 
 	//SITE MEDIA
 	$GLOBALS['SOCIAL_FACEBOOK'] = "";
