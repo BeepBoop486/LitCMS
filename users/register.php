@@ -5,11 +5,52 @@
 
 <section id="styles" class="s-styles">
 	<div class="row">
+
+		<?php 
+
+			if (isset($_POST['submit'])) {
+				$pmail = $_POST['mail'];
+				$pname = $_POST['uname'];
+				$ppass = $_POST['pass'];
+				$ppass2 = $_POST['pass2'];
+
+				if ($pmail && $pname && $ppass && $ppass) {
+					if($ppass == $ppass2) {
+						$finalpass = password_hash($ppass, PASSWORD_BCRYPT);
+
+						$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass) VALUES(?,?,?)");
+						$stmt->bind_param("sss", $pname, $pmail, $ppass);
+						if($stmt->execute()) {
+							echo '
+								<div class="col-five tab-full">
+									<div class="alert-box alert-box--success hideit">
+										<p>You\'ve successfully created an account</p>
+										<i class="fa fa-times alert-box__close"></i>
+									</div>
+								</div>
+							';
+						}
+						$stmt->close();
+					} else {
+						echo '
+							<div class="col-five tab-full">
+								<div class="alert-box alert-box--error hideit">
+									<p>Your passwords doesn\'t match</p>
+                    				<i class="fa fa-times alert-box__close"></i>
+								</div>
+							</div>
+						';
+					}
+				}
+			}
+
+		?>
+
 		<div class="col-full tab-full">
 			
 			<h3 class="add-bottom">Sign up in <?php echo $GLOBALS['SITE_NAME']; ?></h3>
 
-			<form action="register" method="GET">
+			<form action="register" method="post">
 				
 				<div>
 					<label for="mail">Email</label>
