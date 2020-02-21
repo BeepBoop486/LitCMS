@@ -20,20 +20,41 @@
 				if ($pmail && $pname && $ppass && $ppass) {
 					if($ppass == $ppass2) {
 						$finalpass = password_hash($ppass, PASSWORD_BCRYPT);
+						$canreg = 1;
 
-						$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass) VALUES(?,?,?)");
-						$stmt->bind_param("sss", $pname, $pmail, $finalpass);
-						if($stmt->execute()) {
+						$stmt = $conn->prepare("SELECT * FROM users WHERE uname=? OR umail=?");
+						$stmt->bind_param("ss", $pname, $pmail);
+						$stmt->execute();
+						$stmt->store_result();
+						if ($stmt->num_rows>0) {
+							$canreg = 0;
+						}
+						$stmt->close();
+
+						if($canreg == 1) {
+							$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass) VALUES(?,?,?)");
+							$stmt->bind_param("sss", $pname, $pmail, $finalpass);
+							if($stmt->execute()) {
+								echo '
+									<div class="col-full tab-full">
+										<div class="alert-box alert-box--success hideit">
+											<p>You\'ve successfully created an account</p>
+											<i class="fa fa-times alert-box__close"></i>
+										</div>
+									</div>
+								';
+							}
+							$stmt->close();
+						} else {
 							echo '
 								<div class="col-full tab-full">
-									<div class="alert-box alert-box--success hideit">
-										<p>You\'ve successfully created an account</p>
+									<div class="alert-box alert-box--error hideit">
+										<p>An account already exists with that name and/or email</p>
 										<i class="fa fa-times alert-box__close"></i>
 									</div>
 								</div>
 							';
 						}
-						$stmt->close();
 					} else {
 						echo '
 							<div class="col-full tab-full">
