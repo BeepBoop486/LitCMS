@@ -37,11 +37,15 @@
 	//OTHER STUFF
 
 	$menus[] = "Home";
-	$menus[] = "Register";
-	$menus[] = "Sign In";
+	$menus[] = "Users";
 
 	$menu_link[] = "/";
-	$menu_link[] = "/register";
-	$menu_link[] = "/login";
+	$menu_link[] = "#0";
+
+	$menu_child[] = ""; //Home child
+	$menu_child[] = ["Login", "Register"];
+
+	$menu_childl[] = ""; //Home child links
+	$menu_childl[] = ["/login", "/register"]; //Home child links
 
 ?>

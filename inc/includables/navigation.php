@@ -4,7 +4,24 @@
 	<ul class="header__nav">
 	<?php
 		for($i = 0; $i < count($menus); $i++) {
-			echo '<li><a href="'.$menu_link[$i].'">'.$menus[$i].'</a></li>';
+			if ($menu_child[$i] == "") {
+				echo '<li><a href="'.$menu_link[$i].'">'.$menus[$i].'</a></li>';
+			} else {
+				echo '<li class="has-children">
+						<a href="'.$menu_link[$i].'">'.$menus[$i].'</a>
+						<ul>
+						';
+
+				foreach ($menu_child[$i] as $key => $value) {
+					echo '
+						<li><a href="'.$menu_childl[$i][$key].'">'.$value.'</a></li>
+					';
+				}
+
+				echo '
+						</ul>
+					   </li>';
+			}
 		}
 	?>
 	</ul>
