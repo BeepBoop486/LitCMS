@@ -13,7 +13,7 @@
 					//TODO: Go to an entry
 
 				echo '
-					<div class="featured__column featured__column--big">
+					<div class="featured__column featured__column--big sep">
 						<div class="entry" style="background-image: url('.$pthumb.')">
 							<div class="entry__content">
 							<span class="entry__category"><a href="#">'.$pcat.'</a></span>
@@ -41,7 +41,7 @@
 				while($stmt->fetch()) {
 					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured);
 					echo '
-						<div class="featured__column featured__column--small">
+						<div class="featured__column featured__column--small sephalf">
 							<div class="entry" style="background-image: url('.$pthumb.')">
 								<div class="entry__content">
 								<span class="entry__category"><a href="#">'.$pcat.'</a></span>

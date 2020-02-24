@@ -942,3 +942,11 @@ textarea {
 }
 
 /*# sourceMappingURL=base.css.map */
+
+.sep {
+   padding: 6px;
+}
+
+.sephalf {
+   padding: 2.5px;
+}
