@@ -24,6 +24,15 @@
 			}
 		}
 	?>
+	<?php if(!isset($_SESSION['name'])) : ?>
+	<li class="has-children">
+		<a href="#0">Users</a>
+		<ul>
+			<li><a href="/login">Login</a></li>
+			<li><a href="/register">Register</a></li>
+		</ul>
+	</li>
+	<?php endif; ?>
 	</ul>
 
 	<a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu"></a>
