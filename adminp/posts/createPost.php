@@ -1,6 +1,7 @@
 <?php 
 
 	include $_SERVER["DOCUMENT_ROOT"] . '/inc/db.php';
+	include '../inc/amiadmin.php';
 	include '../funcs/getCats.php';
 
 	if (isset($_POST["submit"])) {
