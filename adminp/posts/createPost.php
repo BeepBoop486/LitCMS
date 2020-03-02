@@ -1,6 +1,7 @@
 <?php 
 
 	include $_SERVER["DOCUMENT_ROOT"] . '/inc/db.php';
+	include '../funcs/getCats.php';
 
 	if (isset($_POST["submit"])) {
 		$pname = $_POST["pname"];
@@ -23,6 +24,7 @@
 			} else {
 				echo "There's an error with the query";
 			}
+			$stmt->close();
 		} else {
 			echo "You must to fill all of the inputs";
 		}
@@ -50,12 +52,16 @@
 	</div>
 	<!-- The date will be taken automatically -->
 	<div>
-		<label>Enter the category: </label>
+		<label>Select the category: </label>
 		<select name="pcat">
-			<option>Category #1</option>
-			<option>Category #2</option>
-			<option>Category #3</option>
-			<option>Category #4</option>
+			<?php 
+
+				$cats = GetCatsID($conn);
+				for ($i=0; $i < count($cats)+1; $i++) { 
+					echo '<option>'.GetCatName($conn, $i).'</option>';
+				}
+
+			 ?>
 		</select>
 	</div>
 	<div>
