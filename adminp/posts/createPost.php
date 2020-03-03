@@ -1,6 +1,5 @@
 <?php 
 
-	include $_SERVER["DOCUMENT_ROOT"] . '/inc/db.php';
 	include '../inc/header.php';
 	include '../funcs/getCats.php';
 
