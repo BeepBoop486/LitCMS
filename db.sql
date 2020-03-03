@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2020 a las 18:24:08
+-- Tiempo de generación: 03-03-2020 a las 22:12:44
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.3.14
+-- Versión de PHP: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,7 +61,8 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `uname` varchar(100) NOT NULL,
   `umail` varchar(255) NOT NULL,
-  `upass` varchar(255) NOT NULL
+  `upass` varchar(255) NOT NULL,
+  `is_admin` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

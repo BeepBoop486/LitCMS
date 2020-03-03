@@ -32,7 +32,7 @@
 						$stmt->close();
 
 						if($canreg == 1) {
-							$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass, isadmin) VALUES(?,?,?,?)");
+							$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass, is_admin) VALUES(?,?,?,?)");
 							$o = 0;
 							$stmt->bind_param("sssi", $pname, $pmail, $finalpass, $o);
 							if($stmt->execute()) {
