@@ -6,6 +6,4 @@
 	$GLOBALS['DB_PASS'] = "";
 	$GLOBALS['DB_NAME'] = "litcms";
 
-	include "config.php";
-
 ?>

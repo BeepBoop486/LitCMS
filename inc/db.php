@@ -8,4 +8,6 @@
 		die("There's been an error trying to connect to the database, errno: " . $conn->errno . " " . $conn->error);
 	}
 
+	include $_SERVER["DOCUMENT_ROOT"] . "/config.php";
+
  ?>
