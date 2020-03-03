@@ -21,7 +21,7 @@
 
 	    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-		    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+		    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/adminp/index.php">
 		      <div class="sidebar-brand-icon rotate-n-15">
 		        <i class="fas fa-car"></i>
 		      </div>
@@ -52,3 +52,8 @@
 		    </li>
 
 		</ul>
+
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="content">
+				<!-- TODO: Topbar -->
+				<div class="container-fluid">

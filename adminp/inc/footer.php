@@ -1,3 +1,8 @@
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Bootstrap core JavaScript-->
 	<script src="/adminp/vendor/jquery/jquery.min.js"></script>
 	<script src="/adminp/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
