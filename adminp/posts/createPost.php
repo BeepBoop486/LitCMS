@@ -18,7 +18,7 @@
 				$o = 0;
 				$stmt->bind_param("sssssssi", $pname, $pcnt, $pupl, $pthumb, $date, $ptags, $pcat, $o);
 				if ($stmt->execute()) {
-					echo "The entry posted successfully";
+					echo "<script>window.location.href='/adminp/posts/editPosts.php'</script>";
 				} else {
 					echo "There's been an error tryin' to post " . $conn->error;
 				}
