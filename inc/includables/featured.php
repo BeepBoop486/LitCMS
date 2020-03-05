@@ -42,9 +42,7 @@
 
 				$stmt->close();
 
-				$stmt = $conn->prepare("SELECT * FROM posts WHERE is_featured=? ORDER BY id DESC LIMIT 2");
-				$feat = 0;
-				$stmt->bind_param("i", $feat);
+				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT 2");
 				$stmt->execute();
 				while($stmt->fetch()) {
 					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured);
