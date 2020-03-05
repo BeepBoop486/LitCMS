@@ -50,6 +50,12 @@
 		    		<span>Categories</span>
 		    	</a>
 		    </li>
+		    <li class="nav-item">
+		    	<a href="#" class="nav-link">
+		    		<i class="fas fa-fw fa-cog"></i>
+		    		<span>Site settings</span>
+		    	</a>
+		    </li>
 
 		</ul>
 
