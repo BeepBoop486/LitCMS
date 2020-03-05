@@ -13,8 +13,8 @@
 		<th scope="col">#</th>
 		<th scope="col">Name</th>
 		<th scope="col">Author</th>
-		<th scope="col">Date</th>
 		<th scope="col">Edit</th>
+		<th scope="col">Delete</th>
 	</thead>
 <?php
 
@@ -24,8 +24,8 @@
 				<th scope="row">'.$pid.'</th>
 				<th><a href="/adminp/posts/editPost.php?id='.$pid.'">'.$pname.'</a></th>
 				<th>'.$pupl.'</th>
-				<th>'.$pdate.'</th>
 				<th><a href="/adminp/posts/editPost.php?id='.$pid.'"><i class="fas fa-fw fa-edit"></i> Edit</a></th>
+				<th><a href="/adminp/posts/deletePost.php?id='.$pid.'" class="text-danger"><i class="fas fa-fw fa-backspace"></i> Delete</a></th>
 			</tr>
 		';
 	}
