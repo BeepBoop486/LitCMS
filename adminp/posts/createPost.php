@@ -5,21 +5,22 @@
 
 	if (isset($_POST["submit"])) {
 		$pname = $_POST["pname"];
-		$pcnt = $_POST["pname"];
+		$pcnt = $_POST["pcnt"];
 		$pupl = $_POST["pupl"];
 		$pthumb = $_POST["pthumb"];
+		$ptags = $_POST["ptags"];
 		$pcat = $_POST["pcat"];
 
-		if ($pname && $pcnt && $pupl && $pthumb && $pcat) {
-			$stmt = $conn->prepare("INSERT INTO posts(post_name, post_content, post_uploader, post_thumb, post_date, post_cat, is_featured) VALUES(?,?,?,?,?,?,?)");
+		if ($pname && $pcnt && $pupl && $pthumb && $ptags && $pcat) {
+			$stmt = $conn->prepare("INSERT INTO posts(post_name, post_content, post_uploader, post_thumb, post_date, post_tags, post_cat, is_featured) VALUES(?,?,?,?,?,?,?,?)");
 			if ($stmt) {
 				$date = date("d/m/Y");
 				$o = 0;
-				$stmt->bind_param("ssssssi", $pname, $pcnt, $pupl, $pthumb, $date, $pcat, $o);
+				$stmt->bind_param("sssssssi", $pname, $pcnt, $pupl, $pthumb, $date, $ptags, $pcat, $o);
 				if ($stmt->execute()) {
 					echo "The entry posted successfully";
 				} else {
-					echo "There's been an error tryin' to post";
+					echo "There's been an error tryin' to post " . $conn->error;
 				}
 			} else {
 				echo "There's an error with the query";
@@ -63,6 +64,10 @@
 
 			 ?>
 		</select>
+	</div>
+	<div>
+		<label>Tags of this post:</label>
+		<input type="text" name="ptags">
 	</div>
 	<div>
 		<input type="submit" name="submit" value="Post">
