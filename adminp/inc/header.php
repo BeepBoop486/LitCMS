@@ -39,7 +39,7 @@
 		    	</a>
 		    </li>
 		    <li class="nav-item">
-		    	<a href="/adminp/posts/editPost.php" class="nav-link">
+		    	<a href="/adminp/posts/editPosts.php" class="nav-link">
 		    		<i class="fas fa-fw fa-edit"></i>
 		    		<span>Manage posts</span> <!-- Modify, rename, edit and delete posts -->
 		    	</a>
