@@ -1,0 +1,33 @@
+<button onclick="b()" class="btn"><b>B</b></button>
+<button onclick="i()" class="btn"><i>I</i></button>
+<button onclick="u()" class="btn"><u>U</u></button>
+<div></div>
+
+<textarea id="text" cols="100" rows="20"></textarea>
+
+<script>
+
+var elm = document.getElementById("text")
+
+function b() {elm.value += "<b></b>"}
+function i() {elm.value += "<i></i>"}
+function u() {elm.value += "<u></u>"}
+
+</script>
+
+<style>
+*{
+	margin: 0;
+	padding: 2px;
+}
+#text {
+	border: 2px solid #ccc;
+}
+.btn {
+	border: 0;
+	background: #fff;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+</style>
