@@ -10,9 +10,13 @@
 				$stmt->bind_param("i", $feat);
 				$stmt->execute();
 
+				$stmt->store_result();
+				$rows = $stmt->num_rows;
+
 				$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured);
 				$stmt->fetch();
 
+				if($rows > 0) {
 					echo '
 						<div class="featured__column featured__column--big sep">
 							<div class="entry" style="background-image: url('.$pthumb.')">
@@ -32,6 +36,7 @@
 							</div>
 						</div>
 					';
+				}
 
 				$stmt->close();
 
