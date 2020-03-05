@@ -5,11 +5,14 @@
 
 			<?php 
 				//This will be the latest post
-				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT 1");
+				$stmt = $conn->prepare("SELECT * FROM posts WHERE is_featured=? LIMIT 1");
+				$feat = 1;
+				$stmt->bind_param("i", $feat);
 				$stmt->execute();
+
 				$stmt->store_result();
 				$rows = $stmt->num_rows;
-				$stmt->free_result();
+
 				$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured);
 				$stmt->fetch();
 
@@ -40,7 +43,7 @@
 				$stmt->close();
 
 				$stmt = $conn->prepare("SELECT * FROM posts WHERE is_featured=? ORDER BY id DESC LIMIT 2");
-				$feat = 1;
+				$feat = 0;
 				$stmt->bind_param("i", $feat);
 				$stmt->execute();
 				while($stmt->fetch()) {
