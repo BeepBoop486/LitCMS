@@ -24,6 +24,7 @@
 			  	<th>'.$catname.'</th>
 			  	<th><a href="/adminp/modifyCat/'.$catid.'"><i class="fas fa-fw fa-edit"></i> Edit</a></th>
 			  	<th><a href="" class="text-danger"><i class="fas fa-fw fa-backspace"></i> Delete</a></th>
+			  	<th></th>
 			  </tr>';
 	}
 	$stmt->close();

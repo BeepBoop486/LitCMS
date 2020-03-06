@@ -15,6 +15,7 @@
 		<th scope="col">Author</th>
 		<th scope="col">Edit</th>
 		<th scope="col">Delete</th>
+		<th scope="col"><a href="/adminp/posts/createPost.php" class="text-success font-weight-bold"><i class="fas fa-fw fa-plus"></i> New</a></th>
 	</thead>
 <?php
 
@@ -26,6 +27,7 @@
 				<th>'.$pupl.'</th>
 				<th><a href="/adminp/posts/editPost.php?id='.$pid.'"><i class="fas fa-fw fa-edit"></i> Edit</a></th>
 				<th><a href="/adminp/posts/deletePost.php?id='.$pid.'" class="text-danger"><i class="fas fa-fw fa-backspace"></i> Delete</a></th>
+				<th></th>
 			</tr>
 		';
 	}

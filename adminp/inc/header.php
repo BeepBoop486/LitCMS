@@ -33,15 +33,9 @@
 		    <div class="sidebar-heading">Content</div>
 
 		    <li class="nav-item">
-		    	<a href="/adminp/posts/createPost.php" class="nav-link">
-		    		<i class="fas fa-fw fa-comment-alt"></i>
-		    		<span>Create post</span>
-		    	</a>
-		    </li>
-		    <li class="nav-item">
 		    	<a href="/adminp/posts/editPosts.php" class="nav-link">
 		    		<i class="fas fa-fw fa-edit"></i>
-		    		<span>Manage posts</span> <!-- Modify, rename, edit and delete posts -->
+		    		<span>Posts</span> <!-- Modify, rename, edit and delete posts -->
 		    	</a>
 		    </li>
 		    <li class="nav-item">
