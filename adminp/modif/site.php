@@ -2,6 +2,30 @@
 
 	include '../inc/header.php';
 
+	if (isset($_POST["submit"])) {
+		$sitename = $_POST["sitename"];
+		$sitetags = $_POST["sitetags"];
+		$sitedescr= $_POST["sitedescr"];
+		$siteauth = $_POST["siteauth"];
+		$sitefeat = 0;
+		$signup   = $_POST["signup"];
+		$face = $_POST["face"];
+		$inst = $_POST["inst"];
+		$twit = $_POST["twit"];
+		$pint = $_POST["pint"];
+
+		if ($sitename && $sitetags && $sitedescr && $siteauth && $face && $inst && $twit && $pint) {
+			$stmt = $conn->prepare("INSERT INTO config(SITE_NAME,SITE_DESC,SITE_TAGS,SITE_AUTH,FEATURED,REGISTRATION_ENABLED,SOCIAL_FACEBOOK,SOCIAL_TWITTER,SOCIAL_INSTAGRAM,SOCIAL_PINTEREST) VALUES(?,?,?,?,?,?,?,?,?,?)");
+			$stmt->bind_param("ssssiissss", $sitename, $sitedescr, $sitetags, $siteauth, $sitefeat, $signup, $face, $twit, $inst, $pint);
+			if ($stmt->execute()) {
+				echo "<script>window.location.href='/adminp/siteSets'</script>";
+			}
+			$stmt->close();
+		} else {
+			echo "You must to fill all of the fields";
+		}
+	}
+
 ?>
 
 <form action="#" method="POST">
