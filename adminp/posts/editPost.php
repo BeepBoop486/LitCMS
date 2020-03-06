@@ -25,8 +25,8 @@
 		$ptags = $_POST["ptags"];
 
 		if ($pname && $pthumb && $pcnt && $ptags) {
-			$stmt = $conn->prepare("UPDATE posts SET post_name=?,post_content=?,post_thumb=?,post_tags=? WHERE id=?");
-			$stmt->bind_param("ssssi",$pname,$pcnt,$pthumb,$ptags, $getid);
+			$stmt = $conn->prepare("UPDATE posts SET post_name=?,post_content=?,post_thumb=?,post_tags=?,post_cat=? WHERE id=?");
+			$stmt->bind_param("sssssi",$pname,$pcnt,$pthumb,$ptags, $pcat, $getid);
 			if (!$stmt->execute()) {
 				echo "There's been a weird error trying to modify this post :(";
 			} else {
