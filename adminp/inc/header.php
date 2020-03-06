@@ -44,6 +44,9 @@
 		    		<span>Categories</span>
 		    	</a>
 		    </li>
+
+		    <hr class="sidebar-divider">
+		    <div class="sidebar-heading">Site</div>
 		    <li class="nav-item">
 		    	<a href="#" class="nav-link">
 		    		<i class="fas fa-fw fa-cog"></i>
