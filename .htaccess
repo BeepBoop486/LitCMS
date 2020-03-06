@@ -7,4 +7,6 @@
     RewriteRule ^register$ users/register.php						[NC,L]
     RewriteRule ^login$ users/login.php								[NC,L]
 
+    RewriteRule ^adminp/categories adminp/modif/categories.php		[NC,L]
+
 </IfModule>

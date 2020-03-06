@@ -45,7 +45,7 @@
 		    	</a>
 		    </li>
 		    <li class="nav-item">
-		    	<a href="#" class="nav-link">
+		    	<a href="/adminp/categories" class="nav-link">
 		    		<i class="fas fa-fw fa-list"></i>
 		    		<span>Categories</span>
 		    	</a>
