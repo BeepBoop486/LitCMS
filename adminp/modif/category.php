@@ -73,8 +73,8 @@
 		</div>
 
 		<div class="form-group col-md-2">
-			<label>Post:</label>
-			<input type="submit" name="submit" class="form-control" value="Submit">
+			<label>Edit:</label>
+			<input type="submit" name="submit" class="form-control" value="Edit">
 		</div>
 	</div>
 
