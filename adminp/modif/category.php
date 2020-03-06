@@ -19,9 +19,44 @@
 			$stmt = $conn->prepare("UPDATE categories SET cat_name=? WHERE id=?");
 			$stmt->bind_param("si", $pcname, $_GET["id"]);
 			if ($stmt->execute()) {
-				echo "<script>window.location.href='/adminp/categories'</script>";
 			}
 			$stmt->close();
+
+			$stmt = $conn->prepare("SELECT id FROM posts WHERE post_cat=?");
+			$stmt->bind_param("s", $cname);
+			$stmt->execute();
+			$stmt->store_result();
+
+			$rows = $stmt->num_rows;
+			if ($rows > 0) {
+				$stmt->bind_result($pid);
+				while ($stmt->fetch()) {
+					$posts[] = $pid;
+				}
+			} else {
+				echo "<script>window.location.href='/adminp/categories'</script>";
+			}
+
+			$stmt->free_result();
+			$stmt->close();
+
+			if (count($posts) > 0) {
+				$done = 0;
+				for ($i = 0; $i < count($posts); $i++) {
+					$stmt = $conn->prepare("UPDATE posts SET post_cat=? WHERE id=?");
+					$stmt->bind_param("si", $pcname, $posts[$i]);
+					if ($stmt->execute()) {
+						$done += 1;
+					}
+					$stmt->close();
+				}
+				if ($done == count($posts)) {
+					echo "<script>window.location.href='/adminp/categories'</script>";
+				} else {
+					echo "There's been a weird error " . $done;
+				}
+			}
+
 		} else {
 			echo "You must to fill all of the fields";
 		}
