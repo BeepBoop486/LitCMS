@@ -23,10 +23,11 @@
 		$pcnt = $_POST["pcnt"];
 		$pcat = $_POST["pcat"];
 		$ptags = $_POST["ptags"];
+		$pfeat = $_POST["pfeat"];
 
 		if ($pname && $pthumb && $pcnt && $ptags) {
-			$stmt = $conn->prepare("UPDATE posts SET post_name=?,post_content=?,post_thumb=?,post_tags=?,post_cat=? WHERE id=?");
-			$stmt->bind_param("sssssi",$pname,$pcnt,$pthumb,$ptags, $pcat, $getid);
+			$stmt = $conn->prepare("UPDATE posts SET post_name=?,post_content=?,post_thumb=?,post_tags=?,post_cat=?,is_featured=? WHERE id=?");
+			$stmt->bind_param("sssssii",$pname,$pcnt,$pthumb,$ptags, $pcat, $pfeat, $getid);
 			if (!$stmt->execute()) {
 				echo "There's been a weird error trying to modify this post :(";
 			} else {
@@ -90,8 +91,13 @@
 		</div>
 
 		<div class="form-group col-md-3">
+			<label>Is featured:</label>
+			<input type="number" name="pfeat" class="form-control" value="<?php echo $pfeat; ?>">
+		</div>
+
+		<div class="form-group col-md-12">
 			<label>Post:</label>
-			<input type="submit" name="submit" class="form-control" value="Edit!">
+			<input type="submit" name="submit" class="form-control btn-success" value="Edit!">
 		</div>
 
 	</div>

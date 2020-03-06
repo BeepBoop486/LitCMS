@@ -10,13 +10,14 @@
 		$pthumb = $_POST["pthumb"];
 		$ptags = $_POST["ptags"];
 		$pcat = $_POST["pcat"];
+		$pfeat = $_POST["pfeat"];
 
 		if ($pname && $pcnt && $pupl && $pthumb && $ptags && $pcat) {
 			$stmt = $conn->prepare("INSERT INTO posts(post_name, post_content, post_uploader, post_thumb, post_date, post_tags, post_cat, is_featured) VALUES(?,?,?,?,?,?,?,?)");
 			if ($stmt) {
 				$date = date("d/m/Y");
 				$o = 0;
-				$stmt->bind_param("sssssssi", $pname, $pcnt, $pupl, $pthumb, $date, $ptags, $pcat, $o);
+				$stmt->bind_param("sssssssi", $pname, $pcnt, $pupl, $pthumb, $date, $ptags, $pcat, $pfeat);
 				if ($stmt->execute()) {
 					echo "<script>window.location.href='/adminp/posts/editPosts.php'</script>";
 				} else {
@@ -74,8 +75,12 @@
 			<input type="text" name="ptags" class="form-control">
 		</div>
 		<div class="form-group col-md-3">
+			<label>Is featured:</label>
+			<input type="number" name="pfeat" class="form-control">
+		</div>
+		<div class="form-group col-md-12">
 			<label>Post:</label>
-			<input type="submit" name="submit" value="Post" class="form-control color-success">
+			<input type="submit" name="submit" value="Post" class="form-control btn-success">
 		</div>
 
 	</div>
