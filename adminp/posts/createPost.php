@@ -62,9 +62,10 @@
 			<select name="pcat" class="form-control">
 				<?php 
 
-					$cats = GetCatsID($conn);
-					for ($i=0; $i < count($cats)+1; $i++) { 
-						echo '<option>'.GetCatName($conn, $i).'</option>';
+					$catsn = GetCatsNum($conn);
+					$cats = GetCatsName($conn);
+					for ($i=0; $i < $catsn; $i++) { 
+						echo '<option>'.$cats[$i].'</option>';
 					}
 
 				 ?>

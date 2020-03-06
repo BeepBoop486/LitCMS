@@ -78,7 +78,6 @@
 					$cats = GetCatsName($conn);
 					for ($i=0; $i < $catsn; $i++) { 
 						echo '<option>'.$cats[$i].'</option>';
-						//echo GetCatName($conn, $i);
 					}
 
 				 ?>
