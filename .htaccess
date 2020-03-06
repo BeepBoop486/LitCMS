@@ -3,10 +3,11 @@
 
     RewriteEngine on
 
-    RewriteRule ^p/(.*)$ posts/post.php?id=$1						[NC,L]
-    RewriteRule ^register$ users/register.php						[NC,L]
-    RewriteRule ^login$ users/login.php								[NC,L]
+    RewriteRule ^p/(.*)$ posts/post.php?id=$1							[NC,L]
+    RewriteRule ^register$ users/register.php							[NC,L]
+    RewriteRule ^login$ users/login.php									[NC,L]
 
-    RewriteRule ^adminp/categories adminp/modif/categories.php		[NC,L]
+    RewriteRule ^adminp/categories adminp/modif/categories.php			[NC,L]
+    RewriteRule ^adminp/modifyCat/(.*) adminp/modif/category.php?id=$1  [NC,L]
 
 </IfModule>

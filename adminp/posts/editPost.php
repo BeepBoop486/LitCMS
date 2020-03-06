@@ -29,6 +29,8 @@
 			$stmt->bind_param("ssssi",$pname,$pcnt,$pthumb,$ptags, $getid);
 			if (!$stmt->execute()) {
 				echo "There's been a weird error trying to modify this post :(";
+			} else {
+				echo '<script>window.location.href="/adminp/posts/editPosts.php"</script>';
 			}
 			$stmt->close();
 		} else {
