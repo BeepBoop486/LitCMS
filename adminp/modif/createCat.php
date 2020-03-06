@@ -10,6 +10,8 @@
 			$stmt->bind_param("s", $catn);
 			if ($stmt->execute()) {
 				echo '<script>window.location.href="/adminp/categories"</script>';
+			} else {
+				echo "There's been an error " . $conn->error;
 			}
 			$stmt->close();
 		} else {
