@@ -59,8 +59,14 @@
 
 		<div class="form-group col-md-12">
 			<label>Post content:</label>
-			<textarea name="pcnt" class="form-control" id="editor" value="<?php echo $ppcnt; ?>"></textarea>
+			<textarea name="pcnt" class="form-control" id="editor"></textarea>
 		</div>
+
+		<script type="text/javascript">
+			window.onload = () => {
+				tinymce.get('editor').setContent(`<?php echo $ppcnt; ?>`);
+			}
+		</script>
 
 		<div class="form-group col-md-6">
 			<label>Select the category:</label>
