@@ -14,7 +14,7 @@
  		<th scope="col">Name</th>
  		<th scope="col">Edit</th>
  		<th scope="col">Delete</th>
- 		<th scope="col"><a href="" class="float-right text-success font-weight-bold"><i class="fas fa-fw fa-plus"></i>New</a></th>
+ 		<th scope="col"><a href="/adminp/createCat" class="float-right text-success font-weight-bold"><i class="fas fa-fw fa-plus"></i>New</a></th>
  	</thead>
 <?php
 
