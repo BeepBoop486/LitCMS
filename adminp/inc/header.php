@@ -48,7 +48,7 @@
 		    <hr class="sidebar-divider">
 		    <div class="sidebar-heading">Site</div>
 		    <li class="nav-item">
-		    	<a href="#" class="nav-link">
+		    	<a href="/adminp/siteSets" class="nav-link">
 		    		<i class="fas fa-fw fa-cog"></i>
 		    		<span>Site settings</span>
 		    	</a>

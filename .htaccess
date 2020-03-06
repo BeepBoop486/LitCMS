@@ -10,5 +10,6 @@
     RewriteRule ^adminp/categories adminp/modif/categories.php			[NC,L]
     RewriteRule ^adminp/modifyCat/(.*) adminp/modif/category.php?id=$1  [NC,L]
     RewriteRule ^adminp/createCat adminp/modif/createCat.php			[NC,L]
+    RewriteRule ^adminp/siteSets adminp/modif/site.php					[NC,L]
 
 </IfModule>
