@@ -17,6 +17,25 @@
 		$stmt->close();
 	}
 
+	if (isset($_POST["submit"])) {
+		$pname = $_POST["pname"];
+		$pthumb = $_POST["pthumb"];
+		$pcnt = $_POST["pcnt"];
+		$pcat = $_POST["pcat"];
+		$ptags = $_POST["ptags"];
+
+		if ($pname && $pthumb && $pcnt && $ptags) {
+			$stmt = $conn->prepare("UPDATE posts SET post_name=?,post_content=?,post_thumb=?,post_tags=? WHERE id=?");
+			$stmt->bind_param("ssssi",$pname,$pcnt,$pthumb,$ptags, $getid);
+			if (!$stmt->execute()) {
+				echo "There's been a weird error trying to modify this post :(";
+			}
+			$stmt->close();
+		} else {
+			echo "Fill all of the fields";
+		}
+	}
+
 ?>
 
 <script type="text/javascript" src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js"></script>
@@ -24,7 +43,7 @@
 <script type="text/javascript">
 </script>
 
-<form action="#">
+<form action="#" method="POST">
 
 	<div class="row">
 		<div class="form-group col-md-6">
@@ -43,7 +62,7 @@
 
 		<div class="form-group col-md-6">
 			<label>Select the category:</label>
-			<select name="pcat" class="form-control">
+			<select name="pcat" class="form-control" id="pcat">
 				<?php 
 
 					$cats = GetCatsID($conn);
@@ -55,6 +74,21 @@
 			</select>
 		</div>
 
+		<div class="form-group col-md-3">
+			<label>Tags:</label>
+			<input type="text" name="ptags" class="form-control" value="<?php echo $pptags; ?>">
+		</div>
+
+		<div class="form-group col-md-3">
+			<label>Post:</label>
+			<input type="submit" name="submit" class="form-control" value="Edit!">
+		</div>
+
 	</div>
 
 </form>
+
+<script type="text/javascript">
+	var pcat = document.getElementById("pcat");
+	pcat.value = "<?php echo $ppcat; ?>"
+</script>
