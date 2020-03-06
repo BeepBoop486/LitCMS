@@ -32,6 +32,8 @@
 			<li><a href="/register">Register</a></li>
 		</ul>
 	</li>
+	<?php else: ?>
+		<li><a href="/adminp">Admin panel</a></li>
 	<?php endif; ?>
 	</ul>
 
