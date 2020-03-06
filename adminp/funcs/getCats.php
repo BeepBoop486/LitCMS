@@ -1,5 +1,18 @@
 <?php 
 
+	function GetCatsName($conn)
+	{
+		$stmt = $conn->prepare("SELECT cat_name FROM categories");
+		$stmt->execute();
+		$stmt->bind_result($name);
+		$names = [];
+		while ($stmt->fetch()) {
+			$names[] = $name;
+		}
+		$stmt->close();
+		return $names;
+	}
+
 	function GetCatsID($conn)
 	{
 		$stmt = $conn->prepare("SELECT id FROM categories");
@@ -11,6 +24,17 @@
 		}
 		$stmt->close();
 		return $ids;
+	}
+
+	function GetCatsNum($conn)
+	{
+		$stmt = $conn->prepare("SELECT * FROM categories");
+		$stmt->execute();
+		$stmt->store_result();
+		$cats = $stmt->num_rows;
+		$stmt->close();
+
+		return $cats;
 	}
 
 	function GetCatName($conn, $catid)
