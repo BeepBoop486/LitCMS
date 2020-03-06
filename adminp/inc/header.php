@@ -50,6 +50,12 @@
 		    		<span>Site settings</span>
 		    	</a>
 		    </li>
+		    <li class="nav-item">
+		    	<a href="/" class="nav-link">
+		    		<i class="fas fa-fw fa-eye"></i>
+		    		<span>View site</span>
+		    	</a>
+		    </li>
 
 		</ul>
 
