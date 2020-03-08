@@ -22,9 +22,17 @@
  			<div class="grid-sizer"></div>
 
  			<?php 
+ 				$like = "$query%";
+
+ 				$stmt = $conn->prepare("SELECT * FROM posts WHERE post_name LIKE ?");
+ 				$stmt->bind_param("s", $like);
+ 				if ($stmt->execute()) {
+ 					$stmt->store_result();
+					$total_pages = ceil($stmt->num_rows / $no_of_records_per_page);
+ 				}
+ 				$stmt->close();
 
  				$stmt = $conn->prepare("SELECT * FROM posts WHERE post_name LIKE ? ORDER BY id DESC LIMIT ?,?");
- 				$like = "$query%";
  				$stmt->bind_param("sii", $like, $offset, $no_of_records_per_page);
  				if ($stmt->execute()) {
 					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pf);
@@ -69,4 +77,3 @@
 
  		</div>
  	</div>
- </section>

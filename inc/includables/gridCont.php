@@ -21,6 +21,12 @@
 
 			<?php 
 
+				$stmt = $conn->prepare("SELECT * FROM posts");
+				$stmt->execute();
+				$stmt->store_result();
+				$total_pages = ceil($stmt->num_rows / $no_of_records_per_page);
+				$stmt->close();
+
 				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT ?,?");
 				$stmt->bind_param("ii", $offset, $no_of_records_per_page);
 				if ($stmt->execute()) {
@@ -64,4 +70,3 @@
 
 		</div>
 	</div>
-</section>
