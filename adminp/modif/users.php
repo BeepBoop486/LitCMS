@@ -18,7 +18,7 @@
 
  		$stmt = $conn->prepare("SELECT * FROM users");
  		$stmt->execute();
- 		$stmt->bind_result($uid, $uname, $umail, $upass, $uadmin);
+ 		$stmt->bind_result($uid, $uname, $umail, $upass, $descr, $uadmin);
  		while ($stmt->fetch()) {
  			echo '
 
@@ -27,7 +27,7 @@
  					<td>'.$uname.'</td>
  					<td>'.$umail.'</td>
  					<td>'.$uadmin.'</td>
- 					<td><a href="#" class="text-success"><i class="fas fa-fw fa-edit"></i> Edit</a></td>
+ 					<td><a href="#"><i class="fas fa-fw fa-edit"></i> Edit</a></td>
  					<td><a href="#" class="text-danger"><i class="fas fa-fw fa-backspace"></i> Delete</a></td>
  				</tr>
 

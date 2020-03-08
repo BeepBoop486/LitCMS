@@ -32,9 +32,10 @@
 						$stmt->close();
 
 						if($canreg == 1) {
-							$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass, is_admin) VALUES(?,?,?,?)");
+							$s = "";
+							$stmt = $conn->prepare("INSERT INTO users(uname, umail, upass, description, is_admin) VALUES(?,?,?,?,?)");
 							$o = 0;
-							$stmt->bind_param("sssi", $pname, $pmail, $finalpass, $o);
+							$stmt->bind_param("ssssi", $pname, $pmail, $finalpass, $s, $o);
 							if($stmt->execute()) {
 								echo '
 									<div class="col-full tab-full">
