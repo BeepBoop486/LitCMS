@@ -5,8 +5,13 @@
 	} else {
 		$index = 0;
 	}
+
 	include 'inc/header.php';
-	include 'inc/includables/gridCont.php';
+	if (!$index) {
+		include 'inc/includables/queryGrid.php';
+	} else {
+		include 'inc/includables/gridCont.php';
+	}
 	include 'inc/footer.php';
 
  ?>

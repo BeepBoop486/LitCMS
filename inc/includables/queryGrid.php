@@ -2,28 +2,31 @@
 
 	//A basic pagination system
 
+	$query = $_GET["query"];
+
 	if (!isset($_GET['pageno'])) {
 		$pageno = 1;
 	} else {
 		$pageno = $_GET['pageno'];
 	}
 
-	$no_of_records_per_page = 10;
+	$no_of_records_per_page = 15; //This is the search, there'll be 5 posts more
 	$offset = ($pageno-1) * $no_of_records_per_page;
 
  ?>
 
-<section class="s-content">
-	<div class="row masonry-wrap">
-		<div class="masonry">
-			
-			<div class="grid-sizer"></div>
+ <section class="s-content">
+ 	<div class="row masonry-wrap">
+ 		<div class="masonry">
+ 			
+ 			<div class="grid-sizer"></div>
 
-			<?php 
+ 			<?php 
 
-				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT ?,?");
-				$stmt->bind_param("ii", $offset, $no_of_records_per_page);
-				if ($stmt->execute()) {
+ 				$stmt = $conn->prepare("SELECT * FROM posts WHERE post_name LIKE ? ORDER BY id DESC LIMIT ?,?");
+ 				$like = "$query%";
+ 				$stmt->bind_param("sii", $like, $offset, $no_of_records_per_page);
+ 				if ($stmt->execute()) {
 					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pf);
 					while ($stmt->fetch()) {
 						$excerpt = substr($pcnt, 0, 100) . " [...]";
@@ -57,11 +60,13 @@
 
 						';
 					}
-				}
-				$stmt->close();
+ 				} else {
+ 					echo $conn->errno;
+ 				}
+ 				$stmt->close();
 
-			 ?>
+ 			 ?>
 
-		</div>
-	</div>
-</section>
+ 		</div>
+ 	</div>
+ </section>

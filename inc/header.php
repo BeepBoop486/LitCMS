@@ -80,7 +80,7 @@
 						</label>
 						<input type="submit" class="search-submit" value="Search">
 					</form>
-					<a href="#0" title="Close Search" class="header__overlay-close">Close</a>
+					<a title="Close Search" class="header__overlay-close">Close</a>
 				</div>
 
 				<a href="#0" title="Menu" class="header__toggle-menu"><span>Menu</span></a>
