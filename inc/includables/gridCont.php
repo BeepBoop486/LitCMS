@@ -1,5 +1,9 @@
 <?php 
 
+	if ($index != 1) {
+		exit;
+	}
+
 	if (!isset($_GET['pageno'])) {
 		$pageno = 1;
 	} else {
