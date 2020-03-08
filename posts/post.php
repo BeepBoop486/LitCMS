@@ -43,6 +43,21 @@
 			<?php echo nl2br($pcnt); ?>
 		</div>
 
+		<p class="s-content__tags">
+			<span>Post tags</span>
+
+			<span class="s-content__tag-list">
+				<?php 
+
+					$tags = explode(",", $ptags);
+					for ($i=0; $i < count($tags); $i++) { 
+						echo '<a>'.$tags[$i].'</a>';
+					}
+
+				 ?>
+			</span>
+		</p>
+
 	</article>
 
 </section>
