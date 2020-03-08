@@ -11,6 +11,7 @@
     RewriteRule ^adminp/modifyCat/(.*) adminp/modif/category.php?id=$1  	[NC,L]
     RewriteRule ^adminp/createCat adminp/modif/createCat.php				[NC,L]
     RewriteRule ^adminp/siteSets adminp/modif/site.php						[NC,L]
-    RewriteRule ^adminp/delCat/(.*) adminp/modif/delCat.php?id=$1	[NC,L]
+    RewriteRule ^adminp/delCat/(.*) adminp/modif/delCat.php?id=$1			[NC,L]
+    RewriteRule ^adminp/users adminp/modif/users.php						[NC,L]
 
 </IfModule>

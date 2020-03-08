@@ -44,6 +44,12 @@
 		    		<span>Categories</span>
 		    	</a>
 		    </li>
+		    <li class="nav-item">
+		    	<a href="/adminp/users" class="nav-link">
+		    		<i class="fas fa-fw fa-users"></i>
+		    		<span>Users</span>
+		    	</a>
+		    </li>
 
 		    <hr class="sidebar-divider">
 		    <div class="sidebar-heading">Site</div>
