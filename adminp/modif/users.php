@@ -27,7 +27,7 @@
  					<td>'.$uname.'</td>
  					<td>'.$umail.'</td>
  					<td>'.$uadmin.'</td>
- 					<td><a href="#"><i class="fas fa-fw fa-edit"></i> Edit</a></td>
+ 					<td><a href="/adminp/user/'.$uid.'"><i class="fas fa-fw fa-edit"></i> Edit</a></td>
  					<td><a href="#" class="text-danger"><i class="fas fa-fw fa-backspace"></i> Delete</a></td>
  				</tr>
 
