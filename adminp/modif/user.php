@@ -65,40 +65,7 @@
 					echo "There's been a weird error " . $done;
 				}
 			}
-
-			/*if ($done != 1) {
-				echo "There's been an error";
-			} else {
-				$stmt = $conn->prepare("SELECT id FROM posts WHERE post_uploader=?");
-				$stmt->bind_param("s", $uname);
-				if ($stmt->execute()) {
-					if($stmt->num_rows > 0) {
-						$stmt->bind_result($pid);
-						while ($stmt->fetch()) {
-							$ids[] = $pid;
-						}
-					}
-				}
-				$stmt->close();
-			}
-
-			if (count($ids) > 0) {
-				$work = 0;
-				for($i = 0; $i < count($ids); $i++) {
-					$stmt = $conn->prepare("UPDATE posts SET post_uploader=? WHERE id=?");
-					$stmt->bind_param("si", $guname, $_GET["id"]);
-					if ($stmt->execute()) {
-						$work = $work + 1;
-					}
-					$stmt->close();
-				}
-
-				if ($work == count($ids)) {
-					echo '<script>window.location.href="/adminp/users"</script>';
-				} else {
-					echo "There's been an error work";
-				}
-			}*/
+			
 		}
 	}
 
