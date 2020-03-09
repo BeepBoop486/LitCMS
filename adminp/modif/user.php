@@ -21,6 +21,7 @@
 		$gudescr = $_POST["udescr"];
 
 		if ($guname && $gumail && $guadmin) {
+			
 			$done = 0;
 			$stmt = $conn->prepare("UPDATE users SET uname=?,umail=?,description=?,is_admin=? WHERE id=?");
 			$stmt->bind_param("sssii", $guname, $gumail, $gudescr, $guadmin, $_GET["id"]);
@@ -65,7 +66,7 @@
 					echo "There's been a weird error " . $done;
 				}
 			}
-			
+
 		}
 	}
 

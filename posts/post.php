@@ -58,6 +58,32 @@
 			</span>
 		</p>
 
+		<div class="s-content__author">
+			<img src="/images/default-pp.png">
+
+			<div class="s-content__author-about">
+				<h4 class="s-content__author-name">
+					<a href="#"><?php echo $pupl; ?></a>
+				</h4>
+
+				<p>
+					<?php 
+
+						$stmt = $conn->prepare("SELECT description FROM users WHERE uname=?");
+						$stmt->bind_param("s", $pupl);
+						$stmt->execute();
+						$stmt->bind_result($udesc);
+						$stmt->fetch();
+						$stmt->close();
+
+						echo $udesc;
+
+					 ?>
+				</p>
+
+			</div>
+		</div>
+
 	</article>
 
 </section>
