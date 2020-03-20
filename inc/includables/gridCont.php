@@ -30,7 +30,7 @@
 				$stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC LIMIT ?,?");
 				$stmt->bind_param("ii", $offset, $no_of_records_per_page);
 				if ($stmt->execute()) {
-					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pf);
+					$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pf, $pviews);
 					while ($stmt->fetch()) {
 						$excerpt = substr($pcnt, 0, 100) . " [...]";
 						echo '

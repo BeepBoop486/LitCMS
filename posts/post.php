@@ -1,8 +1,10 @@
 <?php 
 
 	$index = 0;
+	$i = 0;
 
 	include '../inc/header.php';
+	include '../inc/func/posts.php';
 
 	if (isset($_GET['id'])) {
 		$get_pid = $_GET['id'];
@@ -10,9 +12,11 @@
 		$stmt = $conn->prepare("SELECT * FROM posts WHERE id=? LIMIT 1");
 		$stmt->bind_param("i", $_GET['id']);
 		$stmt->execute();
-		$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pis_featured);
+		$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $pis_featured, $views);
 		$stmt->fetch();
 		$stmt->close();
+
+		addPostView($conn, $pid);
 	}
 
 ?>

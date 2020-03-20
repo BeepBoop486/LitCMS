@@ -13,7 +13,7 @@
 				$stmt->store_result();
 				$rows = $stmt->num_rows;
 
-				$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured);
+				$stmt->bind_result($pid, $pname, $pcnt, $pupl, $pthumb, $pdate, $ptags, $pcat, $featured, $views);
 				$stmt->fetch();
 
 				if($rows > 0) {
@@ -44,7 +44,7 @@
 				$stmt1 = $conn->prepare("SELECT * FROM posts WHERE is_featured=? ORDER BY id DESC LIMIT 2");
 				$stmt1->bind_param("i", $feat);
 				$stmt1->execute();
-				$stmt1->bind_result($ppid, $ppname, $ppcnt, $ppupl, $ppthumb, $ppdate, $pptags, $ppcat, $pfeatured);
+				$stmt1->bind_result($ppid, $ppname, $ppcnt, $ppupl, $ppthumb, $ppdate, $pptags, $ppcat, $pfeatured, $views);
 				while($stmt1->fetch()) {
 					echo '
 						<div class="featured__column featured__column--small sephalf">

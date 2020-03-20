@@ -1,5 +1,7 @@
 <?php 
 
+	$i = 1;
+
 	if (!isset($_GET["query"])) {
 		$index = 1;
 	} else {
@@ -7,6 +9,9 @@
 	}
 
 	include 'inc/header.php';
+
+	include $_SERVER["DOCUMENT_ROOT"] . "/inc/func/posts.php";
+
 	if (!$index) {
 		include 'inc/includables/queryGrid.php';
 	} else {
