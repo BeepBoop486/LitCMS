@@ -35,7 +35,12 @@
 				}
 				$stmt->close();
 			} else {
-				//TODO: Update
+				$stmt = $conn->prepare("UPDATE config SET SITE_NAME=?,SITE_DESC=?,SITE_TAGS=?,SITE_AUTH=?,FEATURED=?,REGISTRATION_ENABLED=?,SOCIAL_FACEBOOK=?,SOCIAL_TWITTER=?,SOCIAL_INSTAGRAM=?,SOCIAL_PINTEREST=?");
+				$stmt->bind_param("ssssiissss", $sitename, $sitedescr, $sitetags, $siteauth, $sitefeat, $signup, $face, $twit, $inst, $pint);
+				if ($stmt->execute()) {
+					echo "<script>window.location.href='/adminp/siteSets'</script>";
+				}
+				$stmt->close();
 			}
 		} else {
 			echo "You must to fill all of the fields";
