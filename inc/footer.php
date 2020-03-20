@@ -58,14 +58,16 @@
 		<div class="row bottom tags-wrap">
 			<div class="col-full tags">
 				<h3>Tags</h3>
-				<?php 
+				<div class="tagcloud">
+					<?php 
 
-					$tags = explode(",", $GLOBALS["SITE_TAGS"]);
-					for ($i=0; $i < count($tags); $i++) { 
-						echo '<a>'.$tags[$i].'</a>';
-					}
+						$tags = explode(",", $GLOBALS["SITE_TAGS"]);
+						for ($i=0; $i < count($tags); $i++) { 
+							echo '<a>'.$tags[$i].'</a>';
+						}
 
-				 ?>
+					 ?>
+				</div>
 			</div>
 		</div>
 
